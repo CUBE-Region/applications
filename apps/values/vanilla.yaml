@@ -90,13 +90,15 @@ mcbackup:
           name: minecraft-cube-vanilla-secret
           key: s3-backup-password
     AWS_ACCESS_KEY_ID:
-      secretKeyRef:
-        name: minecraft-cube-common-secret
-        key: s3-access-key-id
+      valueFrom:
+        secretKeyRef:
+          name: minecraft-cube-common-secret
+          key: s3-access-key-id
     AWS_SECRET_ACCESS_KEY:
-      secretKeyRef:
-        name: minecraft-cube-common-secret
-        key: s3-secret-access-key
+      valueFrom:
+        secretKeyRef:
+          name: minecraft-cube-common-secret
+          key: s3-secret-access-key
 
 # envFrom: # TODO: enable envFrom whitelist
 
