@@ -14,6 +14,7 @@ spec:
       chart: minecraft
       targetRevision: 4.26.3
       helm:
+        releaseName: minecraft-cube-vanilla
         valueFiles:
           - $repo/apps/values/vanilla.yaml
   destination:
