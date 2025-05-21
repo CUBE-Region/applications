@@ -8,14 +8,14 @@ spec:
   sources:
     - repoURL: https://github.com/CUBE-Region/applications
       targetRevision: main
-      path: apps/games/minecraft-cube/pvcs
+      path: apps/pvcs
       ref: repo
     - repoURL: https://itzg.github.io/minecraft-server-charts/
       chart: minecraft
       targetRevision: 4.26.3
       helm:
         valueFiles:
-          - $repo/apps/games/minecraft-cube/values/vanilla.yaml
+          - $repo/apps/values/vanilla.yaml
   destination:
     namespace: minecraft-cube
     server: {{ .Values.spec.destination.server }}
