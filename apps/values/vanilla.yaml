@@ -45,6 +45,14 @@ minecraftServer:
       - "datapack:terralith"
       - "datapack:terratonic"
       - "datapack:william-wythers-overhauled-overworld-(datapack)"
+      - "fastasyncworldedit" # TODO: setting
+      - "gopaintadvanced" # TODO: setting
+      - "essentialsx" # TODO: setting
+      - "luckperms" # TODO: setting
+      - "worldguard" # TODO: setting
+  spigetResources:
+    - 23118 # goBrush TODO: setting
+    - 17311 # WorldEditSelectionVisualizer TODO: setting
 serviceAnnotations:
   tailscale.com/hostname: minecraft-cube-vanilla
 
