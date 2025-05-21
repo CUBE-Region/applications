@@ -40,6 +40,8 @@ minecraftServer:
   memory: 4G
   serviceType: LoadBalancer
   loadBalancerClass: tailscale
+  pluginUrls:
+    - https://ci.athion.net/job/goBrush-1.13+/87/artifact/build/libs/goBrush-3.8.0-87.jar
   modrinth:
     projects:
       - "datapack:terralith"
@@ -51,7 +53,6 @@ minecraftServer:
       - "luckperms" # TODO: setting
       - "worldguard" # TODO: setting
   spigetResources:
-    - 23118 # goBrush TODO: setting
     - 17311 # WorldEditSelectionVisualizer TODO: setting
 serviceAnnotations:
   tailscale.com/hostname: minecraft-cube-vanilla
