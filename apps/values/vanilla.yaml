@@ -71,7 +71,32 @@ rconServiceAnnotations:
   tailscale.com/hostname: minecraft-cube-vanilla-rcon
 
 mcbackup:
-  enabled: false # TODO: enable mcbackup
+  enabled: true
+  pauseIfNoPlayers: "false"
+  backupInterval: 3h
+  excludes: "*.jar,cache,logs"
+
+  backupMethod: restic
+  pruneResticRetention: "--keep-daily 7 --keep-weekly 5 --keep-monthly 12 --keep-yearly 75"
+  resticEnvs:
+    RESTIC_REPOSITORY:
+      valueFrom:
+        secretKeyRef:
+          name: minecraft-cube-vanilla-secret
+          key: s3-backup-repository
+    RESTIC_PASSWORD:
+      valueFrom:
+        secretKeyRef:
+          name: minecraft-cube-vanilla-secret
+          key: s3-backup-password
+    AWS_ACCESS_KEY_ID:
+      secretKeyRef:
+        name: minecraft-cube-common-secret
+        key: s3-access-key-id
+    AWS_SECRET_ACCESS_KEY:
+      secretKeyRef:
+        name: minecraft-cube-common-secret
+        key: s3-secret-access-key
 
 # envFrom: # TODO: enable envFrom whitelist
 
