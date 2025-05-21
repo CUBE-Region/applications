@@ -58,7 +58,7 @@ serviceAnnotations:
   tailscale.com/hostname: minecraft-cube-vanilla
 
 extraEnv:
-  - DATAPACKS: "https://github.com/CUBE-Region/cube-vanilla-datapack/releases/download/0.1.0/cube-vanilla-datapack.zip"
+  DATAPACKS: "https://github.com/CUBE-Region/cube-vanilla-datapack/releases/download/0.1.0/cube-vanilla-datapack.zip"
 
 rcon:
   enabled: false # TODO: enable rcon
