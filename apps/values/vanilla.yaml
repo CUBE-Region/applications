@@ -54,17 +54,19 @@ minecraftServer:
       - "worldguard" # TODO: setting
   spigetResources:
     - 17311 # WorldEditSelectionVisualizer TODO: setting
-serviceAnnotations:
-  tailscale.com/hostname: minecraft-cube-vanilla
+
+  rcon:
+    enabled: ture
+    existingSecret: minecraft-cube-vanilla-secret
+    secretKey: rcon-password
+    serviceType: LoadBalancer
+    loadBalancerClass: tailscale
+
 extraEnv:
   DATAPACKS: "https://github.com/CUBE-Region/cube-vanilla-datapack/releases/download/0.1.0/cube-vanilla-datapack.zip"
 
-rcon:
-  enabled: ture
-  existingSecret: minecraft-cube-vanilla-secret
-  secretKey: rcon-password
-  serviceType: LoadBalancer
-  loadBalancerClass: tailscale
+serviceAnnotations:
+  tailscale.com/hostname: minecraft-cube-vanilla
 rconServiceAnnotations:
   tailscale.com/hostname: minecraft-cube-vanilla-rcon
 
