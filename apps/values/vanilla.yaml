@@ -41,7 +41,7 @@ minecraftServer:
   serviceType: LoadBalancer
   loadBalancerClass: tailscale
   pluginUrls:
-    - https://ci.athion.net/job/goBrush-1.13+/87/artifact/build/libs/goBrush-3.8.0-87.jar
+    - https://ci.athion.net/job/goBrush-1.13+/87/artifact/build/libs/goBrush-3.8.0-87.jar # TODO: setting
   modrinth:
     projects:
       - "datapack:terralith"
@@ -56,6 +56,9 @@ minecraftServer:
     - 17311 # WorldEditSelectionVisualizer TODO: setting
 serviceAnnotations:
   tailscale.com/hostname: minecraft-cube-vanilla
+
+extraEnv:
+  - DATAPACKS: "https://github.com/CUBE-Region/cube-vanilla-datapack/releases/download/0.1.0/cube-vanilla-datapack.zip"
 
 rcon:
   enabled: false # TODO: enable rcon
