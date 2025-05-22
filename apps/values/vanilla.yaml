@@ -103,14 +103,14 @@ mcbackup:
 
 extraVolumes:
   - volumes:
-      - name: minio-ca-certs
+      - name: homelab-ca-certs
         secret:
           secretName: operator-ca-tls-minio
           items:
-            - key: ca-certificates.crt
-              path: minio-ca.crt
+            - key: ca.crt
+              path: homelab-ca.crt
     volumeMounts:
-      - name: minio-ca-certs
+      - name: homelab-ca-certs
         mountPath: /etc/ssl/certs/restic-ca
 
 # envFrom: # TODO: enable envFrom whitelist
