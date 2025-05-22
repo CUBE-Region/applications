@@ -99,6 +99,11 @@ mcbackup:
         secretKeyRef:
           name: minecraft-cube-common-secret
           key: s3-secret-access-key
+    RESTIC_CACERT:
+      valueFrom:
+        secretKeyRef:
+          name: operator-ca-tls-minio
+          key: ca.crt
 
 # envFrom: # TODO: enable envFrom whitelist
 
