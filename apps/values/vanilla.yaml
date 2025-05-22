@@ -99,11 +99,19 @@ mcbackup:
         secretKeyRef:
           name: minecraft-cube-common-secret
           key: s3-secret-access-key
-    RESTIC_CACERT:
-      valueFrom:
-        secretKeyRef:
-          name: operator-ca-tls-minio
-          key: ca.crt
+    RESTIC_CACERT: /etc/ssl/certs/restic-ca/homelab-ca.crt
+
+extraVolumes:
+  - volumes:
+      - name: minio-ca-certs
+        secret:
+          secretName: operator-ca-tls-minio
+          items:
+            - key: ca-certificates.crt
+              path: minio-ca.crt
+    volumeMounts:
+      - name: minio-ca-certs
+        mountPath: /etc/ssl/certs/restic-ca
 
 # envFrom: # TODO: enable envFrom whitelist
 
