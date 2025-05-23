@@ -64,6 +64,12 @@ minecraftServer:
 
 extraEnv:
   DATAPACKS: "https://github.com/CUBE-Region/cube-vanilla-datapack/releases/download/0.1.0/cube-vanilla-datapack.zip"
+  ENABLE_WHITELIST: "true"
+  WHITELIST:
+    valueFrom:
+      secretKeyRef:
+        name: minecraft-cube-common-secret
+        key: whitelist
 
 serviceAnnotations:
   tailscale.com/hostname: minecraft-cube-vanilla
