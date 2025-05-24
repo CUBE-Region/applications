@@ -47,7 +47,7 @@ minecraftServer:
       - "datapack:terralith"
       - "datapack:terratonic"
       - "datapack:william-wythers-overhauled-overworld-(datapack)"
-      - "fastasyncworldedit" # TODO: setting
+      - "fastasyncworldedit:cf5QSDJ7" # TODO: setting
       - "gopaintadvanced" # TODO: setting
       - "essentialsx" # TODO: setting
       - "luckperms" # TODO: setting
@@ -118,9 +118,7 @@ extraVolumes:
     volumeMounts:
       - name: homelab-ca-certs
         mountPath: /etc/ssl/certs/restic-ca
-
-# envFrom: # TODO: enable envFrom whitelist
-
+ 
 persistence:
   dataDir:
     enabled: true
