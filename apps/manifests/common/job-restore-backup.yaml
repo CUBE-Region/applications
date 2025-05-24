@@ -40,7 +40,7 @@ spec:
                   fi
 
                   echo "Found backup. Beginning restoration..."
-                  restic restore $BACKUP_ID --target / --include /data --verify -vv
+                  restic restore -vv $BACKUP_ID --target / --include /data --verify
 
                   if [ $? -eq 0 ]; then
                     echo "Restoration completed successfully."
