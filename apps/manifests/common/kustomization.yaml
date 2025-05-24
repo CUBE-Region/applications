@@ -3,4 +3,4 @@ kind: Kustomization
 
 resources:
   - secret.yaml
-  
+  - job-restore-backup.yaml

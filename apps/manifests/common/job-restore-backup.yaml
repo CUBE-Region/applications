@@ -1,0 +1,116 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: minecraft-cube-vanilla-restore-backup
+  namespace: minecraft-cube
+spec:
+  schedule: "0 0 31 2 *" # Set to February 31st (never runs)
+  suspend: true # Always suspended by default
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      ttlSecondsAfterFinished: 86400 # Auto-delete after 24 hours
+      template:
+        spec:
+          restartPolicy: Never
+          securityContext:
+            fsGroup: 2000
+            runAsGroup: 3000
+            runAsNonRoot: true
+            runAsUser: 1000
+            seccompProfile:
+              type: RuntimeDefault
+          containers:
+            - name: restore-backup
+              image: itzg/mc-backup:latest
+              imagePullPolicy: IfNotPresent
+              command: ["/bin/bash"]
+              args:
+                - "-c"
+                - |
+                  set -e
+                  echo "Starting backup restoration process..."
+                  echo "Restoring backup ID: $BACKUP_ID"
+                  cd /data
+
+                  # Verify backup exists before attempting to restore
+                  if ! restic snapshots $BACKUP_ID --json; then
+                    echo "Error: Backup ID $BACKUP_ID not found!"
+                    exit 1
+                  fi
+
+                  echo "Found backup. Beginning restoration..."
+                  restic restore $BACKUP_ID --target /data --verify
+
+                  if [ $? -eq 0 ]; then
+                    echo "Restoration completed successfully."
+                  else
+                    echo "Restoration failed with exit code $?"
+                    exit 1
+                  fi
+              env:
+                - name: SRC_DIR
+                  value: /data
+                - name: BACKUP_NAME
+                  value: world
+                - name: BACKUP_ID
+                  valueFrom:
+                    configMapKeyRef:
+                      name: minecraft-cube-restore-config
+                      key: backup_id
+                - name: AWS_ACCESS_KEY_ID
+                  valueFrom:
+                    secretKeyRef:
+                      key: s3-access-key-id
+                      name: minecraft-cube-common-secret
+                - name: AWS_SECRET_ACCESS_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      key: s3-secret-access-key
+                      name: minecraft-cube-common-secret
+                - name: RESTIC_CACERT
+                  value: /etc/ssl/certs/restic-ca/homelab-ca.crt
+                - name: RESTIC_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      key: s3-backup-password
+                      name: minecraft-cube-vanilla-secret
+                - name: RESTIC_REPOSITORY
+                  valueFrom:
+                    secretKeyRef:
+                      key: s3-backup-repository
+                      name: minecraft-cube-vanilla-secret
+              resources:
+                requests:
+                  cpu: 500m
+                  memory: 512Mi
+              securityContext:
+                allowPrivilegeEscalation: false
+                capabilities:
+                  drop:
+                    - ALL
+                readOnlyRootFilesystem: false
+              volumeMounts:
+                - mountPath: /tmp
+                  name: tmp
+                - mountPath: /data
+                  name: datadir
+                - mountPath: /backups
+                  name: backupdir
+                - mountPath: /etc/ssl/certs/restic-ca
+                  name: homelab-ca-certs
+          volumes:
+            - emptyDir: {}
+              name: tmp
+            - name: datadir
+              persistentVolumeClaim:
+                claimName: minecraft-cube-vanilla-pvc
+            - emptyDir: {}
+              name: backupdir
+            - name: homelab-ca-certs
+              secret:
+                defaultMode: 420
+                items:
+                  - key: ca.crt
+                    path: homelab-ca.crt
+                secretName: operator-ca-tls-minio
