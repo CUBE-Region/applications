@@ -1,0 +1,17 @@
+default:
+  permissions: []
+  parents:
+  - member
+member:
+  permissions:
+  - simplewarps.cmd.*
+  - worldguard.build.*
+  - fawe.permpack.basic
+  - fawe.worldguard
+  - gobrush.export
+  - gobrush.use
+  - gopaint.use
+  - wesv.reload:
+      value: false
+  - worldedit.navigation.jumpto.tool
+  - worldedit.navigation.thru.tool

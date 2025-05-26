@@ -41,14 +41,14 @@ minecraftServer:
   serviceType: LoadBalancer
   loadBalancerClass: tailscale
   pluginUrls:
-    - https://ci.athion.net/job/goBrush-1.13+/87/artifact/build/libs/goBrush-3.8.0-87.jar # TODO: setting
+    - https://ci.athion.net/job/goBrush-1.13+/87/artifact/build/libs/goBrush-3.8.0-87.jar
   modrinth:
     projects:
       - "datapack:terralith"
       - "datapack:terratonic"
       - "datapack:william-wythers-overhauled-overworld-(datapack)"
       - "fastasyncworldedit:cf5QSDJ7"
-      - "gopaintadvanced" # TODO: setting
+      - "gopaintadvanced"
       - "simple_warps"
       - "luckperms"
       - "worldguard"
@@ -66,6 +66,7 @@ extraEnv:
   DATAPACKS: "https://github.com/CUBE-Region/cube-vanilla-datapack/releases/download/0.1.0/cube-vanilla-datapack.zip"
   ENABLE_WHITELIST: "true"
   CREATE_CONSOLE_IN_PIPE: "true"
+  SYNC_SKIP_NEWER_IN_DESTINATION: "false"
   PATCH_DEFINITIONS: "/data/patches/vanilla.json"
   WHITELIST:
     valueFrom:
@@ -83,7 +84,6 @@ mcbackup:
   pauseIfNoPlayers: "false"
   backupInterval: 3h
   excludes: "*.jar,cache,logs"
-
   backupMethod: restic
   pruneResticRetention: "--keep-tag manual --keep-within-daily 7d --keep-within-weekly 1m --keep-within-monthly 1y --keep-within-yearly 99y"
   resticEnvs:
@@ -127,6 +127,13 @@ extraVolumes:
     volumeMounts:
       - name: patches
         mountPath: /data/patches
+  - volumes:
+      - name: lp-storage
+        configMap:
+          name: minecraft-cube-vanilla-lp-storage
+    volumeMounts:
+      - name: lp-storage
+        mountPath: /plugins/LuckPerms/yaml-storage
 
 persistence:
   dataDir:

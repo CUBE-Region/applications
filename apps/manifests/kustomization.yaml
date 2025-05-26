@@ -11,3 +11,8 @@ configMapGenerator:
       disableNameSuffixHash: true
     files:
       - config_patches/vanilla.json
+  - name: minecraft-cube-vanilla-lp-storage
+    options:
+      disableNameSuffixHash: true
+    files:
+      - config_patches/plugins/vanilla/LuckPerms/yaml-storage/groups.yml
