@@ -47,13 +47,13 @@ minecraftServer:
       - "datapack:terralith"
       - "datapack:terratonic"
       - "datapack:william-wythers-overhauled-overworld-(datapack)"
-      - "fastasyncworldedit:cf5QSDJ7" # TODO: setting
+      - "fastasyncworldedit:cf5QSDJ7"
       - "gopaintadvanced" # TODO: setting
       - "simple_warps"
       - "luckperms"
-      - "worldguard" # TODO: setting
+      - "worldguard"
   spigetResources:
-    - 17311 # WorldEditSelectionVisualizer TODO: setting
+    - 17311 # WorldEditSelectionVisualizer
 
   rcon:
     enabled: ture

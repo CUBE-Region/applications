@@ -282,6 +282,58 @@
           }
         }
       ]
+    },
+    {
+      "file": "/data/plugins/FastAsyncWorldEdit/config.yml",
+      "ops": [
+        {
+          "$put": {
+            "path": "$",
+            "key": "region-restrictions",
+            "valuy": false
+          }
+        },
+        {
+          "$put": {
+            "path": "$.paths",
+            "key": "per-player-schematics",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.limits.default",
+            "key": "disallowed-blocks",
+            "value": []
+          }
+        },
+        {
+          "$put": {
+            "path": "$.limits.default",
+            "key": "universal-disallowed-blocks",
+            "value": false
+          }
+        }
+      ]
+    },
+    {
+      "file": "/data/plugins/FastAsyncWorldEdit/worldedit-config.yml.yml",
+      "ops": [
+        {
+          "$put": {
+            "path": "$.limits",
+            "key": "disallowed-blocks",
+            "value": []
+          }
+        },
+        {
+          "$put": {
+            "path": "$.limits.max-polygonal-points",
+            "key": "maximum",
+            "value": 100
+          }
+        }
+      ]
     }
   ]
 }
