@@ -27,6 +27,7 @@ minecraftServer:
   version: 1.21.4
   type: PAPER
   difficulty: peaceful
+  icon: https://raw.githack.com/CUBE-Region/applications/main/images/icon.png?raw=true
   announcePlayerAchievements: false
   generateStructures: false
   spawnAnimals: false
@@ -34,7 +35,7 @@ minecraftServer:
   spawnNPCs: false
   spawnProtection: 0
   gameMode: creative
-  motd: "Welcome to Minecraft on Kubernetes!"
+  motd: "\u00a7x\u00a73\u00a74\u00a79\u00a74\u00a7e\u00a76\u00a7l\u00a7nC\u00a7x\u00a74\u00a75\u00a79\u00a71\u00a7e\u00a71\u00a7l\u00a7nU\u00a7x\u00a75\u00a75\u00a78\u00a7d\u00a7d\u00a7c\u00a7l\u00a7nB\u00a7x\u00a76\u00a76\u00a78\u00a7a\u00a7d\u00a76\u00a7l\u00a7nE\u00a7x\u00a77\u00a77\u00a78\u00a76\u00a7d\u00a71\u00a7l\u00a7n \u00a7x\u00a78\u00a78\u00a78\u00a73\u00a7c\u00a7c\u00a7l\u00a7nS\u00a7x\u00a79\u00a78\u00a77\u00a7f\u00a7c\u00a77\u00a7l\u00a7ne\u00a7x\u00a7a\u00a79\u00a77\u00a7c\u00a7c\u00a72\u00a7l\u00a7nr\u00a7x\u00a7b\u00a7a\u00a77\u00a78\u00a7b\u00a7d\u00a7l\u00a7nv\u00a7x\u00a7c\u00a7b\u00a77\u00a75\u00a7b\u00a77\u00a7l\u00a7ne\u00a7x\u00a7d\u00a7b\u00a77\u00a71\u00a7b\u00a72\u00a7l\u00a7nr\nvanilla v1.21.4"
   onlineMode: true
   enforceSecureProfile: true
   memory: 4G
