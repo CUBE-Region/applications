@@ -9,6 +9,14 @@ This repository contains manifests for deploying Minecraft server applications o
 Currently, only vanilla Minecraft servers are provided via Kubernetes. Miniaturia and cocricot servers are provided using docker compose on VM.
 
 
+## Send Commands to the Server
+```
+kubectl exec -it -n <namespace> <pod-name> -- mc-send-to-console <command>
+
+# example
+kubectl exec --namespace minecraft-cube pods/minecraft-cube-vanilla-0 -c minecraft-cube-vanilla -- mc-send-to-console list
+```
+
 ## Backup Management
 
 ### About Automated Backups

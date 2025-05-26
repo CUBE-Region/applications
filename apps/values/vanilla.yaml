@@ -49,8 +49,8 @@ minecraftServer:
       - "datapack:william-wythers-overhauled-overworld-(datapack)"
       - "fastasyncworldedit:cf5QSDJ7" # TODO: setting
       - "gopaintadvanced" # TODO: setting
-      - "essentialsx" # TODO: setting
-      - "luckperms" # TODO: setting
+      - "simple_warps"
+      - "luckperms"
       - "worldguard" # TODO: setting
   spigetResources:
     - 17311 # WorldEditSelectionVisualizer TODO: setting
