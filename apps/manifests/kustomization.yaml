@@ -4,3 +4,8 @@ kind: Kustomization
 resources:
   - common/
   - vanilla/
+
+configMapGenerator:
+  - name: minecraft-cube-vanilla-config
+    files:
+      - config_patches/vanilla.json

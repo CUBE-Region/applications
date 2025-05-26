@@ -65,6 +65,7 @@ minecraftServer:
 extraEnv:
   DATAPACKS: "https://github.com/CUBE-Region/cube-vanilla-datapack/releases/download/0.1.0/cube-vanilla-datapack.zip"
   ENABLE_WHITELIST: "true"
+  PATCH_DEFINITIONS: "/data/patches"
   WHITELIST:
     valueFrom:
       secretKeyRef:
@@ -118,6 +119,13 @@ extraVolumes:
     volumeMounts:
       - name: homelab-ca-certs
         mountPath: /etc/ssl/certs/restic-ca
+  - volumes:
+      - name: patches
+        configMap:
+          name: minecraft-cube-vanilla-patches
+    volumeMounts:
+      - name: patches
+        mountPath: /data/patches
 
 persistence:
   dataDir:

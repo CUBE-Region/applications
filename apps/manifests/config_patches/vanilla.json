@@ -1,0 +1,17 @@
+{
+  "patches": [
+    {
+      "file": "/data/plugins/LuckPerms/config.yml",
+      "file-format": "yaml",
+      "ops": [
+        {
+          "$put": {
+            "path": "$",
+            "key": "storage-method",
+            "value": "yaml-combined"
+          }
+        }
+      ]
+    }
+  ]
+}

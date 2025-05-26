@@ -1,0 +1,134 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "PatchSet Schema",
+    "description": "Schema for mc-image-helper patch operation set, see: https://github.com/itzg/mc-image-helper#patchset",
+    "type": "object",
+    "required": [
+        "patches"
+    ],
+    "properties": {
+        "patches": {
+            "type": "array",
+            "description": "Array of patch definitions to apply",
+            "items": {
+                "$ref": "#/definitions/PatchDefinition"
+            }
+        }
+    },
+    "definitions": {
+        "PatchDefinition": {
+            "type": "object",
+            "required": [
+                "file",
+                "ops"
+            ],
+            "properties": {
+                "file": {
+                    "type": "string",
+                    "description": "Path to the file to patch"
+                },
+                "file-format": {
+                    "type": "string",
+                    "description": "Optional format specification. If not provided, format is detected from file suffix",
+                    "enum": [
+                        "json",
+                        "yaml",
+                        "toml"
+                    ]
+                },
+                "ops": {
+                    "type": "array",
+                    "description": "Array of patch operations to apply to the file",
+                    "items": {
+                        "$ref": "#/definitions/PatchOperation"
+                    }
+                }
+            }
+        },
+        "PatchOperation": {
+            "type": "object",
+            "description": "A single patch operation",
+            "oneOf": [
+                {
+                    "required": [
+                        "$set"
+                    ],
+                    "properties": {
+                        "$set": {
+                            "$ref": "#/definitions/SetOperation"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "required": [
+                        "$put"
+                    ],
+                    "properties": {
+                        "$put": {
+                            "$ref": "#/definitions/PutOperation"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "SetOperation": {
+            "type": "object",
+            "required": [
+                "path",
+                "value"
+            ],
+            "properties": {
+                "path": {
+                    "type": "string",
+                    "description": "JSON path to the field to set"
+                },
+                "value": {
+                    "description": "The value to set. If the given value is a string, variable placeholders of the form ${...} will be replaced from the environment variables"
+                },
+                "value-type": {
+                    "$ref": "#/definitions/ValueType"
+                }
+            }
+        },
+        "PutOperation": {
+            "type": "object",
+            "required": [
+                "path",
+                "key",
+                "value"
+            ],
+            "properties": {
+                "path": {
+                    "type": "string",
+                    "description": "JSON path to the object containing key to set"
+                },
+                "key": {
+                    "type": "string",
+                    "description": "The key to set"
+                },
+                "value": {
+                    "description": "The value to set. If the given value is a string, variable placeholders of the form ${...} will be replaced from the environment variables"
+                },
+                "value-type": {
+                    "$ref": "#/definitions/ValueType"
+                }
+            }
+        },
+        "ValueType": {
+            "type": "string",
+            "description": "Type conversion to apply to the value after variable substitution",
+            "enum": [
+                "int",
+                "float",
+                "bool",
+                "auto",
+                "list of int",
+                "list of float",
+                "list of bool",
+                "list of auto"
+            ]
+        }
+    }
+}

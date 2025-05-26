@@ -1,0 +1,13 @@
+{
+    "[json]": {
+        "editor.tabSize": 2,
+    },
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/apps/config_patches/*.json"
+            ],
+            "url": "/apps/config_patches/schema.json",
+        }
+    ]
+}
