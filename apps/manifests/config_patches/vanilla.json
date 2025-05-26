@@ -290,7 +290,7 @@
           "$put": {
             "path": "$",
             "key": "region-restrictions",
-            "valuy": false
+            "value": false
           }
         },
         {
