@@ -11,6 +11,277 @@
           }
         }
       ]
+    },
+    {
+      "file": "/data/plugins/WorldGuard/config.yml",
+      "ops": [
+        {
+          "$put": {
+            "path": "$.build-permission-nodes",
+            "key": "enable",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.ignition",
+            "key": "block-tnt",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.fire",
+            "key": "disable-lava-fire-spread",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.fire",
+            "key": "disable-all-fire-spread",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.mobs",
+            "key": "block-creeper-explosions",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.mobs",
+            "key": "block-wither-explosions",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.mobs",
+            "key": "block-wither-skull-explosions",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.mobs",
+            "key": "block-enderdragon-portal-creation",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.mobs",
+            "key": "block-fireball-explosions",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.mobs",
+            "key": "block-windcharge-explosions",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.mobs",
+            "key": "disable-enderman-griefing",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.mobs",
+            "key": "disable-snowman-trails",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.mobs",
+            "key": "block-above-ground-slimes",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.mobs",
+            "key": "block-other-explosions",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.mobs",
+            "key": "block-zombie-door-destruction",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.crops",
+            "key": "disable-creature-trampling",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.crops",
+            "key": "disable-player-trampling",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.turtle-egg",
+            "key": "disable-creature-trampling",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.turtle-egg",
+            "key": "disable-player-trampling",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.sniffer-egg",
+            "key": "disable-creature-trampling",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.sniffer-egg",
+            "key": "disable-player-trampling",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.weather",
+            "key": "disable-lightning-strike-fire",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-mushroom-spread",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-ice-melting",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-snow-melting",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-snow-formation",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-ice-formation",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-leaf-decay",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-grass-growth",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-mycelium-spread",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-vine-growth",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-rock-growth",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-sculk-growth",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-crop-growth",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-soil-dehydration",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-soil-moisture-change",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-coral-block-fade",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.dynamics",
+            "key": "disable-copper-block-fade",
+            "value": true
+          }
+        }
+      ]
     }
   ]
 }
