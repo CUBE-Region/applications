@@ -2,7 +2,6 @@
   "patches": [
     {
       "file": "/data/plugins/LuckPerms/config.yml",
-      "file-format": "yaml",
       "ops": [
         {
           "$put": {
