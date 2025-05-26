@@ -122,7 +122,7 @@ extraVolumes:
   - volumes:
       - name: patches
         configMap:
-          name: minecraft-cube-vanilla-patches
+          name: minecraft-cube-vanilla-config
     volumeMounts:
       - name: patches
         mountPath: /data/patches
