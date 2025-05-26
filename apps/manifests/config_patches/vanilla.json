@@ -317,7 +317,7 @@
       ]
     },
     {
-      "file": "/data/plugins/FastAsyncWorldEdit/worldedit-config.yml.yml",
+      "file": "/data/plugins/FastAsyncWorldEdit/worldedit-config.yml",
       "ops": [
         {
           "$put": {
