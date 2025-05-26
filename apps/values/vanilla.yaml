@@ -83,7 +83,7 @@ mcbackup:
   excludes: "*.jar,cache,logs"
 
   backupMethod: restic
-  pruneResticRetention: "--keep-daily 7 --keep-weekly 5 --keep-monthly 12 --keep-yearly 75"
+  pruneResticRetention: "--keep-tag manual --keep-within-daily 7d --keep-within-weekly 1m --keep-within-monthly 1y --keep-within-yearly 99y"
   resticEnvs:
     RESTIC_REPOSITORY:
       valueFrom:
@@ -118,7 +118,7 @@ extraVolumes:
     volumeMounts:
       - name: homelab-ca-certs
         mountPath: /etc/ssl/certs/restic-ca
- 
+
 persistence:
   dataDir:
     enabled: true

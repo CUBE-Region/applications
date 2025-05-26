@@ -76,7 +76,7 @@ main() {
 
   # Execute backup command
   print_info "Triggering backup..."
-  kubectl exec -n "$NAMESPACE" "$POD_ID" -c "$CONTAINER_ID" -- backup now
+  kubectl exec -n "$NAMESPACE" "$POD_ID" -c "$CONTAINER_ID" -- env RESTIC_ADDITIONAL_TAGS=manual backup now
 
   if [[ $? -eq 0 ]]; then
     print_success "Backup successfully triggered!"
