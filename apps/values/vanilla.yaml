@@ -43,6 +43,7 @@ minecraftServer:
   loadBalancerClass: tailscale
   pluginUrls:
     - https://ci.athion.net/job/goBrush-1.13+/87/artifact/build/libs/goBrush-3.8.0-87.jar
+    - https://drive.google.com/uc?export=download&id=1ir95cHF9wE3TxsAwu7oexnIwW7U9GPO1 # Distant Horizons
   modrinth:
     projects:
       - "datapack:terralith"
