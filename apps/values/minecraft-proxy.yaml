@@ -23,6 +23,15 @@ minecraftProxy:
   velocityVersion: 3.4.0-SNAPSHOT
   memory: 512M
   onlineMode: true
+  configFilePath: /server/velocity.toml
+  config: |-
+    player-info-forwarding-mode = "legacy" # for compatibility with clients that older than 1.13
+
+    [servers]
+    vanilla = "minecraft-cube-vanilla.svc.cluster.local:25565"
+
+    [forced-hosts]
+    "${CFG_VANILLA_PROXY_HOSTNAME}" = ["vanilla"]
 
 extraEnv:
   REPLACE_ENV_VARIABLES: "TRUE"
@@ -39,14 +48,14 @@ minecraftServer:
 serviceAnnotations:
   tailscale.com/hostname: minecraft-cube-proxy
 
-extraVolumes:
-  - volumes:
-      - name: proxy-config
-        configMap:
-          name: minecraft-cube-proxy-config
-    volumeMounts:
-      - name: proxy-config
-        mountPath: /server
+# extraVolumes:
+#   - volumes:
+#       - name: proxy-config
+#         configMap:
+#           name: minecraft-cube-proxy-config
+#     volumeMounts:
+#       - name: proxy-config
+#         mountPath: /server
 
 rcon:
   enabled: false
