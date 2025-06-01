@@ -23,7 +23,7 @@ minecraftProxy:
   velocityVersion: 3.4.0-SNAPSHOT
   memory: 512M
   onlineMode: true
-  configFile: /data/config/velocity.toml
+  configFilePath: /data/config/velocity.toml
 
 extraEnv:
   REPLACE_ENV_VARIABLES: "TRUE"
