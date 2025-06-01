@@ -47,7 +47,6 @@ extraVolumes:
     volumeMounts:
       - name: proxy-config
         mountPath: /server
-        subPath: velocity.toml
 
 rcon:
   enabled: false
