@@ -1,7 +1,21 @@
+config-version = "2.7"
+
+bind = "0.0.0.0:25565"
+
+online-mode = true
+force-key-authentication = true
+prevent-client-proxy-connections = false
+
 player-info-forwarding-mode = "legacy" # for compatibility with clients that older than 1.13
+
+kick-existing-players = true
+ping-passthrough = "all"
+
+enable-player-address-logging = true
 
 [servers]
 vanilla = "minecraft-cube-vanilla.svc.cluster.local:25565"
+try = ["vanilla"]
 
 [forced-hosts]
 "${CFG_VANILLA_PROXY_HOSTNAME}" = ["vanilla"]
