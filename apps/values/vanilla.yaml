@@ -75,6 +75,11 @@ extraEnv:
       secretKeyRef:
         name: minecraft-cube-common-secret
         key: whitelist
+  CFG_VELOCITY_SECRET:
+    valueFrom:
+      secretKeyRef:
+        name: minecraft-cube-proxy-secret
+        key: velocity-forwarding-secret
 
 serviceAnnotations:
   tailscale.com/hostname: minecraft-cube-vanilla
