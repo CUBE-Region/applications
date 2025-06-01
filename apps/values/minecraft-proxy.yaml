@@ -88,15 +88,5 @@ extraVolumes:
         subPath: forwarding.secret
         readOnly: true
 
-probes:
-  liveness:
-    enabled: true
-    tcpSocket:
-      port: 25565
-  readiness:
-    enabled: true
-    tcpSocket:
-      port: 25565
-
 rcon:
   enabled: false

@@ -1,6 +1,6 @@
 config-version = "2.7"
 
-bind = "0.0.0.0:25565"
+bind = "0.0.0.0:25577"
 
 online-mode = true
 force-key-authentication = true
