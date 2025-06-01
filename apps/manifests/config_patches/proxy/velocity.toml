@@ -20,3 +20,6 @@ try = ["vanilla"]
 
 [forced-hosts]
 "${CFG_VANILLA_PROXY_HOSTNAME}" = ["vanilla"]
+
+[advanced]
+haproxy-protocol = true
