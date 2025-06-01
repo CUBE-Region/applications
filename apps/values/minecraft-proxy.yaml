@@ -20,7 +20,7 @@ affinity:
 
 minecraftProxy:
   type: VELOCITY
-  velocityVersion: 3.4.0
+  velocityVersion: 3.4.0-SNAPSHOT
   memory: 512M
   onlineMode: true
   configFile: /data/config/velocity.toml
