@@ -75,18 +75,18 @@ extraVolumes:
         configMap:
           name: minecraft-cube-proxy-config
       - name: velocity-forwarding-secret
-        mountPath: /server/forwarding.secret
-        subPath: forwarding.secret
-        readOnly: true
-    volumeMounts:
-      - name: config-source
-        mountPath: /config-source
-      - name: velocity-forwarding-secret
         secret:
           secretName: minecraft-cube-proxy-secret
           items:
             - key: velocity-forwarding-secret
               path: forwarding.secret
+    volumeMounts:
+      - name: config-source
+        mountPath: /config-source
+      - name: velocity-forwarding-secret
+        mountPath: /server/forwarding.secret
+        subPath: forwarding.secret
+        readOnly: true
 
 probes:
   liveness:
