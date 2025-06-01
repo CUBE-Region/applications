@@ -342,7 +342,26 @@
           "$put": {
             "path": "$.settings",
             "key": "bungeecord",
+            "value": false
+          }
+        }
+      ]
+    },
+    {
+      "file": "/data/config/paper-global.yml",
+      "ops": [
+        {
+          "$put": {
+            "path": "$.proxies.velocity",
+            "key": "enabled",
             "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.proxies.velocity",
+            "key": "secret",
+            "value": "${CFG_VELOCITY_SECRET}"
           }
         }
       ]

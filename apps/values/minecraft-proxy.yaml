@@ -29,7 +29,11 @@ extraEnv:
       secretKeyRef:
         name: minecraft-cube-proxy-secret
         key: vanilla-hostname
-
+  CFG_VELOCITY_SECRET:
+    valueFrom:
+      secretKeyRef:
+        name: minecraft-cube-proxy-secret
+        key: velocity-forwarding-secret
 
 podSecurityContext:
   runAsUser: 1000

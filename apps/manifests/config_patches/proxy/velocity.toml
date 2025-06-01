@@ -6,7 +6,7 @@ online-mode = true
 force-key-authentication = true
 prevent-client-proxy-connections = false
 
-player-info-forwarding-mode = "legacy" # for compatibility with clients that older than 1.13
+player-info-forwarding-mode = "modern" # for compatibility with clients that older than 1.13
 forwarding-secret-file = "forwarding.secret"
 
 kick-existing-players = true
@@ -20,6 +20,3 @@ try = ["vanilla"]
 
 [forced-hosts]
 "${CFG_VANILLA_PROXY_HOSTNAME}" = ["vanilla"]
-
-[advanced]
-haproxy-protocol = true
