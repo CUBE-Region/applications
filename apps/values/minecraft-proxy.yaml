@@ -48,14 +48,35 @@ minecraftServer:
 serviceAnnotations:
   tailscale.com/hostname: minecraft-cube-proxy
 
-# extraVolumes:
-#   - volumes:
-#       - name: proxy-config
-#         configMap:
-#           name: minecraft-cube-proxy-config
-#     volumeMounts:
-#       - name: proxy-config
-#         mountPath: /server
+podSecurityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
+  fsGroup: 1000
+
+initContainers:
+  - name: config-setup
+    image: busybox:1.35
+    command:
+      - sh
+      - -c
+      - |
+        cp /config-source/velocity.toml /server/velocity.toml
+        chown 1000:1000 /server/velocity.toml
+        chmod 644 /server/velocity.toml
+    volumeMounts:
+      - name: config-source
+        mountPath: /config-source
+      - name: datadir
+        mountPath: /server
+
+extraVolumes:
+  - volumes:
+      - name: config-source
+        configMap:
+          name: minecraft-cube-proxy-config
+    volumeMounts:
+      - name: config-source
+        mountPath: /config-source
 
 probes:
   liveness:
