@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - common/
   - vanilla/
+  - proxy/
 
 configMapGenerator:
   - name: minecraft-cube-vanilla-config
@@ -16,3 +17,8 @@ configMapGenerator:
       disableNameSuffixHash: true
     files:
       - config_patches/plugins/vanilla/LuckPerms/yaml-storage/groups.yml
+  - name: minecraft-cube-proxy-config
+    options:
+      disableNameSuffixHash: true
+    files:
+      - config_patches/proxy/velocity.toml

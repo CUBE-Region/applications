@@ -17,6 +17,13 @@ spec:
         releaseName: minecraft-cube-vanilla
         valueFiles:
           - $repo/apps/values/vanilla.yaml
+    - repoURL: https://itzg.github.io/minecraft-server-charts/
+      chart: minecraft-proxy
+      targetRevision: 3.9.0
+      helm:
+        releaseName: minecraft-cube-proxy
+        valueFiles:
+          - $repo/apps/values/minecraft-proxy.yaml
   destination:
     namespace: minecraft-cube
     server: {{ .Values.spec.destination.server }}

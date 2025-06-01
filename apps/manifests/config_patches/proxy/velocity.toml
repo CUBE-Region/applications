@@ -1,0 +1,5 @@
+[servers]
+vanilla = "minecraft-cube-vanilla.svc.cluster.local:25565"
+
+[forced-hosts]
+"${CFG_VANILLA_PROXY_HOSTNAME}" = ["vanilla"]

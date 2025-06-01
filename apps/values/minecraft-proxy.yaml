@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=https://artifacthub.io/api/v1/packages/25f82b19-62ef-4b43-bbc3-57bbecd5e9d1/3.9.0/values
+
+resources:
+  requests:
+    memory: 512Mi
+    cpu: 100m
+  limits:
+    memory: 1Gi
+    cpu: 500m
+
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - k8s-w-edelweiss
+
+minecraftProxy:
+  type: VELOCITY
+  velocityVersion: 3.4.0
+  memory: 512M
+  onlineMode: true
+  configFile: /data/config/velocity.toml
+
+extraEnv:
+  REPLACE_ENV_VARIABLES: "TRUE"
+  CFG_VANILLA_PROXY_HOSTNAME:
+    valueFrom:
+      secretKeyRef:
+        name: minecraft-cube-proxy-secret
+        key: vanilla-hostname
+
+minecraftServer:
+  serviceType: LoadBalancer
+  loadBalancerClass: tailscale
+
+serviceAnnotations:
+  tailscale.com/hostname: minecraft-cube-proxy
+
+extraVolumes:
+  - volumes:
+      - name: proxy-config
+        configMap:
+          name: minecraft-cube-proxy-config
+    volumeMounts:
+      - name: proxy-config
+        mountPath: /data/config
+
+rcon:
+  enabled: false
