@@ -1,3 +1,5 @@
+player-info-forwarding-mode = "legacy" # for compatibility with clients that older than 1.13
+
 [servers]
 vanilla = "minecraft-cube-vanilla.svc.cluster.local:25565"
 
