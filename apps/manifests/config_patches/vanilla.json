@@ -334,6 +334,18 @@
           }
         }
       ]
+    },
+    {
+      "file": "/data/spigot.yml",
+      "ops": [
+        {
+          "$put": {
+            "path": "$.settings",
+            "key": "bungeecord",
+            "value": true
+          }
+        }
+      ]
     }
   ]
 }

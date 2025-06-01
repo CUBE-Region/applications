@@ -15,7 +15,7 @@ ping-passthrough = "all"
 enable-player-address-logging = true
 
 [servers]
-vanilla = "minecraft-cube-vanilla.svc.cluster.local:25565"
+vanilla = "minecraft-cube-vanilla:25565"
 try = ["vanilla"]
 
 [forced-hosts]
