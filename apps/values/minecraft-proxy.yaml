@@ -50,8 +50,8 @@ serviceAnnotations:
 
 podSecurityContext:
   runAsUser: 1000
-  runAsGroup: 1000
-  fsGroup: 1000
+  runAsGroup: 3000
+  fsGroup: 2000
 
 initContainers:
   - name: config-setup
@@ -61,7 +61,7 @@ initContainers:
       - -c
       - |
         cp /config-source/velocity.toml /server/velocity.toml
-        chown 1000:1000 /server/velocity.toml
+        chown 1000:3000 /server/velocity.toml
         chmod 644 /server/velocity.toml
     volumeMounts:
       - name: config-source
