@@ -23,7 +23,6 @@ minecraftProxy:
   velocityVersion: 3.4.0-SNAPSHOT
   memory: 512M
   onlineMode: true
-  configFilePath: /data/config/velocity.toml
 
 extraEnv:
   REPLACE_ENV_VARIABLES: "TRUE"
@@ -47,7 +46,8 @@ extraVolumes:
           name: minecraft-cube-proxy-config
     volumeMounts:
       - name: proxy-config
-        mountPath: /data/config
+        mountPath: /server
+        subPath: velocity.toml
 
 rcon:
   enabled: false
