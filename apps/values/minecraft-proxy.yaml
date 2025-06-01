@@ -61,7 +61,7 @@ initContainers:
       - -c
       - |
         cp /config-source/velocity.toml /server/velocity.toml
-        chown 1000:3000 /server/velocity.toml
+        chown 1000:2000 /server/velocity.toml
         chmod 644 /server/velocity.toml
     volumeMounts:
       - name: config-source
@@ -74,9 +74,19 @@ extraVolumes:
       - name: config-source
         configMap:
           name: minecraft-cube-proxy-config
+      - name: velocity-forwarding-secret
+        mountPath: /server/forwarding.secret
+        subPath: forwarding.secret
+        readOnly: true
     volumeMounts:
       - name: config-source
         mountPath: /config-source
+      - name: velocity-forwarding-secret
+        secret:
+          secretName: minecraft-cube-proxy-secret
+          items:
+            - key: velocity-forwarding-secret
+              path: forwarding.secret
 
 probes:
   liveness:

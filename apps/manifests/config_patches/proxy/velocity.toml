@@ -7,6 +7,7 @@ force-key-authentication = true
 prevent-client-proxy-connections = false
 
 player-info-forwarding-mode = "legacy" # for compatibility with clients that older than 1.13
+forwarding-secret-file = "forwarding.secret"
 
 kick-existing-players = true
 ping-passthrough = "all"
