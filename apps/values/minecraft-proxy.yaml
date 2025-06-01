@@ -57,5 +57,20 @@ serviceAnnotations:
 #       - name: proxy-config
 #         mountPath: /server
 
+podSecurityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
+  fsGroup: 1000
+
+probes:
+  liveness:
+    enabled: true
+    tcpSocket:
+      port: 25565
+  readiness:
+    enabled: true
+    tcpSocket:
+      port: 25565
+
 rcon:
   enabled: false
