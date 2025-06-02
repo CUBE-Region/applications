@@ -1,7 +1,7 @@
 {
   "patches": [
     {
-      "file": "/data/plugins/Plan/config.yml",
+      "file": "/server/plugins/plan/config.yml",
       "ops": [
         {
           "$put": {
