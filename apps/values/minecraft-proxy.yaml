@@ -35,6 +35,12 @@ minecraftProxy:
         type: ClusterIP
         port: 8804
 
+strategyType: Recreate
+persistence:
+  dataDir:
+    enabled: true
+    existingClaim: minecraft-cube-proxy-pvc
+
 serviceAnnotations:
   tailscale.com/hostname: minecraft-cube-proxy
 
