@@ -34,7 +34,7 @@
         {
           "$put": {
             "path": "$.Database.MySQL",
-            "key": "Username",
+            "key": "User",
             "value": "plan"
           }
         },
@@ -42,7 +42,7 @@
           "$put": {
             "path": "$.Database.MySQL",
             "key": "Password",
-            "value": "${PLAN_DB_PASSWORD}"
+            "value": "${CFG_PLAN_DB_PASSWORD}"
           }
         },
         {

@@ -47,7 +47,7 @@ serviceAnnotations:
 extraEnv:
   REPLACE_ENV_VARIABLES: "TRUE"
   PATCH_DEFINITIONS: "/data/patches/proxy.json"
-  PLAN_DB_PASSWORD:
+  CFG_PLAN_DB_PASSWORD:
     valueFrom:
       secretKeyRef:
         name: cube-mysql-secret
