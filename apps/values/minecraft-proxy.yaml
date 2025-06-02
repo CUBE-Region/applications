@@ -25,8 +25,6 @@ minecraftProxy:
     - "https://github.com/plan-player-analytics/Plan/releases/download/5.4.1722.1/Plan-5.4-build-1722.1.jar"
   serviceType: LoadBalancer
   loadBalancerClass: tailscale
-  serviceAnnotations:
-    tailscale.com/hostname: minecraft-cube-proxy
   extraPorts:
     - name: plan-web
       containerPort: 8804
@@ -36,6 +34,9 @@ minecraftProxy:
         embedded: false
         type: ClusterIP
         port: 8804
+
+serviceAnnotations:
+  tailscale.com/hostname: minecraft-cube-proxy
 
 extraEnv:
   REPLACE_ENV_VARIABLES: "TRUE"
