@@ -14,3 +14,18 @@ spec:
       protocol: TCP
   selector:
     app: minecraft-cube-proxy-minecraft-proxy
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: minecraft-cube-proxy-plan
+spec:
+  type: ClusterIP
+  ports:
+    - name: plan-web
+      port: 8804
+      targetPort: plan-web
+      protocol: TCP
+  selector:
+    app: minecraft-cube-proxy-minecraft-proxy
