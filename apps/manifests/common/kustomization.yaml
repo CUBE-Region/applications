@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - secret.yaml
   - job-restore-backup.yaml
+  - cube-mysql-secret.yaml

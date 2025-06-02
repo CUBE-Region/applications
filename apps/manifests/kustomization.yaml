@@ -22,3 +22,8 @@ configMapGenerator:
       disableNameSuffixHash: true
     files:
       - config_patches/proxy/velocity.toml
+  - name: minecraft-cube-proxy-patches
+    options:
+      disableNameSuffixHash: true
+    files:
+      - config_patches/proxy.json

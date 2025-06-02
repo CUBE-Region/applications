@@ -1,0 +1,86 @@
+{
+  "patches": [
+    {
+      "file": "/data/plugins/Plan/config.yml",
+      "ops": [
+        {
+          "$put": {
+            "path": "$.Database",
+            "key": "Type",
+            "value": "MySQL"
+          }
+        },
+        {
+          "$put": {
+            "path": "$.Database.MySQL",
+            "key": "Host",
+            "value": "cube-pxc-db-haproxy.minecraft-cube.svc.cluster.local"
+          }
+        },
+        {
+          "$put": {
+            "path": "$.Database.MySQL",
+            "key": "Port",
+            "value": 3306
+          }
+        },
+        {
+          "$put": {
+            "path": "$.Database.MySQL",
+            "key": "Database",
+            "value": "plan"
+          }
+        },
+        {
+          "$put": {
+            "path": "$.Database.MySQL",
+            "key": "Username",
+            "value": "plan"
+          }
+        },
+        {
+          "$put": {
+            "path": "$.Database.MySQL",
+            "key": "Password",
+            "value": "${PLAN_DB_PASSWORD}"
+          }
+        },
+        {
+          "$put": {
+            "path": "$.Webserver",
+            "key": "Port",
+            "value": 8804
+          }
+        },
+        {
+          "$put": {
+            "path": "$.Webserver",
+            "key": "Internal_IP",
+            "value": "0.0.0.0"
+          }
+        },
+        {
+          "$put": {
+            "path": "$.Network",
+            "key": "Name",
+            "value": "Cube Network"
+          }
+        },
+        {
+          "$put": {
+            "path": "$.Data_gathering",
+            "key": "Geolocations",
+            "value": true
+          }
+        },
+        {
+          "$put": {
+            "path": "$.Data_gathering",
+            "key": "Accept_GeoLite2_EULA",
+            "value": true
+          }
+        }
+      ]
+    }
+  ]
+}

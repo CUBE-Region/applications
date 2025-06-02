@@ -24,6 +24,39 @@ spec:
         releaseName: minecraft-cube-proxy
         valueFiles:
           - $repo/apps/values/minecraft-proxy.yaml
+    - repoURL: https://percona.github.io/percona-helm-charts/
+      chart: pxc-db
+      targetRevision: 1.17.0
+      helm:
+        releaseName: cube-pxc-db
+        parameters:
+          - name: pxc.certManager
+            value: "true"
+        valuesObject:
+          users:
+            - name: plan
+              dbs:
+                - plan
+              passwordSecretRef:
+                name: cube-mysql-secret
+                key: password
+              grants:
+                - ALL
+                - PRIVILEGES
+          haproxy:
+            resources:
+              requests:
+                memory: 128Mi
+                cpu: 100m
+          pxc:
+            resources:
+              requests:
+                cpu: 100m
+          logcollector:
+            resources:
+              requests:
+                cpu: 0
+                memory: 0
   destination:
     namespace: minecraft-cube
     server: {{ .Values.spec.destination.server }}
