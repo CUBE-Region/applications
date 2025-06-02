@@ -22,7 +22,7 @@ minecraftProxy:
   memory: 512M
   onlineMode: true
   plugins:
-    - "https://github.com/plan-player-analytics/Plan/releases/download/5.4.1722.1/Plan-5.4-build-1722.1.jar"
+    - "https://github.com/plan-player-analytics/Plan/releases/download/5.6.2965/Plan-5.6-build-2965.jar"
   serviceType: LoadBalancer
   loadBalancerClass: tailscale
   extraPorts:
