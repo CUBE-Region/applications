@@ -54,6 +54,7 @@ minecraftServer:
       - "simple_warps"
       - "luckperms"
       - "worldguard"
+      - "plan:teRNK6V9"
   spigetResources:
     - 17311 # WorldEditSelectionVisualizer
 
