@@ -20,6 +20,7 @@ affinity:
             - key: kubernetes.io/hostname
               operator: In
               values:
+                - k8s-w-blossom
                 - k8s-w-edelweiss
 
 minecraftServer:
