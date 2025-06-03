@@ -5,9 +5,9 @@ sidecarContainers: []
 
 resources:
   requests:
-    memory: 5Gi
+    memory: 6Gi
   limits:
-    memory: 5Gi
+    memory: 6Gi
 
 workloadAsStatefulSet: true
 strategyType: RollingUpdate
