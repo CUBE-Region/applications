@@ -35,6 +35,7 @@ spec:
         valuesObject:
           users:
             - name: plan
+              host: '%'
               dbs:
                 - plan
               passwordSecretRef:
