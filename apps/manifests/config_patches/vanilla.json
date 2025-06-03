@@ -395,8 +395,8 @@
         {
           "$put": {
             "path": "$.Server",
-            "key": "Name",
-            "value": "Cube Vanilla"
+            "key": "ServerName",
+            "value": "CUBE Vanilla"
           }
         },
         {
