@@ -76,6 +76,11 @@ extraEnv:
       secretKeyRef:
         name: minecraft-cube-common-secret
         key: whitelist
+  CFG_PLAN_DB_PASSWORD:
+    valueFrom:
+      secretKeyRef:
+        name: cube-mysql-secret
+        key: password
 
 serviceAnnotations:
   tailscale.com/hostname: minecraft-cube-vanilla
