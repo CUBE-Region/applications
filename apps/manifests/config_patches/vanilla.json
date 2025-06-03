@@ -394,23 +394,9 @@
         },
         {
           "$put": {
-            "path": "$.Webserver",
-            "key": "Port",
-            "value": 8804
-          }
-        },
-        {
-          "$put": {
-            "path": "$.Webserver",
-            "key": "Internal_IP",
-            "value": "0.0.0.0"
-          }
-        },
-        {
-          "$put": {
-            "path": "$.Network",
+            "path": "$.Server",
             "key": "Name",
-            "value": "Cube Network"
+            "value": "Cube Vanilla"
           }
         },
         {
