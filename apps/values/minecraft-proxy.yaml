@@ -58,6 +58,11 @@ extraEnv:
       secretKeyRef:
         name: minecraft-cube-proxy-secret
         key: vanilla-hostname
+  CFG_PLAN_ALTERNATIVE_IP:
+    valueFrom:
+      secretKeyRef:
+        name: minecraft-cube-proxy-secret
+        key: plan-web-address
 
 podSecurityContext:
   runAsUser: 1000
