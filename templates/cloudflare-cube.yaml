@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minecraft-cube-cloudflare
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: https://github.com/CUBE-Region/applications
+      targetRevision: main
+      path: apps/manifests/cloudflare-cube
+      ref: repo
+    - repoURL: https://wrsys.github.io/helm-charts/
+      chart: cloudflare-tunnel-remote
+      targetRevision: 0.5.0
+      helm:
+        releaseName: cloudflare-cube
+        valuesObject:
+          cloudflare:
+            secretName: cloudflare-cube-secret
+  destination:
+    namespace: cloudflare-cube
+    server: {{ .Values.spec.destination.server }}
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jqPathExpressions:
+        - .spec.template.metadata.annotations."kubectl.kubernetes.io/restartedAt"
