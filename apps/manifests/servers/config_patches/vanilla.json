@@ -419,27 +419,6 @@
             "key": "Disable_Webserver",
             "value": true
           }
-        },
-        {
-          "$put": {
-            "path": "$.Webserver.Alternative_IP",
-            "key": "Enabled",
-            "value": true
-          }
-        },
-        {
-          "$put": {
-            "path": "$.Webserver.Alternative_IP",
-            "key": "Address",
-            "value": "${CFG_PLAN_ALTERNATIVE_IP}"
-          }
-        },
-        {
-          "$put": {
-            "path": "$.WebServer.Security.SSL_certificate",
-            "key": "KeyStore_path",
-            "value": "proxy"
-          }
         }
       ]
     }
