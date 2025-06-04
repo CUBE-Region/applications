@@ -96,7 +96,7 @@
         },
         {
           "$put": {
-            "path": "$.WebServer.Security.SSL_certificate",
+            "path": "$.Webserver.Security.SSL_certificate",
             "key": "KeyStore_path",
             "value": "proxy"
           }
