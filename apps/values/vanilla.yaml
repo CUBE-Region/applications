@@ -67,7 +67,7 @@ minecraftServer:
     loadBalancerClass: tailscale
 
 extraEnv:
-  DATAPACKS: "https://github.com/CUBE-Region/cube-vanilla-datapack/releases/download/0.1.0/cube-vanilla-datapack.zip"
+  DATAPACKS: "https://github.com/CUBE-Region/cube-vanilla-datapack/releases/download/0.1.1/cube-vanilla-datapack.zip"
   ENABLE_WHITELIST: "true"
   CREATE_CONSOLE_IN_PIPE: "true"
   SYNC_SKIP_NEWER_IN_DESTINATION: "false"
