@@ -8,6 +8,7 @@ resources:
     memory: 8Gi
   limits:
     memory: 8Gi
+    cpu: 6000m
 
 workloadAsStatefulSet: true
 strategyType: RollingUpdate
