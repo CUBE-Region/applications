@@ -12,6 +12,7 @@ member:
     - gobrush.use
     - gopaint.use
     - ptw.*
+    - axiom.*
     - minecraft.command.teleport
     - minecraft.command.gamemode
     - minecraft.command.give

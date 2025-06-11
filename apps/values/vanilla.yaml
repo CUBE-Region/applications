@@ -61,6 +61,7 @@ minecraftServer:
       - "axiom-paper-plugin"
   spigetResources:
     - 17311 # WorldEditSelectionVisualizer
+    - 46461 # F3NPerm
 
   rcon:
     enabled: ture
