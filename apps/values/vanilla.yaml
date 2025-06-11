@@ -58,6 +58,7 @@ minecraftServer:
       - "luckperms"
       - "worldguard"
       - "plan:teRNK6V9"
+      - "axiom-paper-plugin"
   spigetResources:
     - 17311 # WorldEditSelectionVisualizer
 
