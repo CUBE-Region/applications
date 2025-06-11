@@ -59,6 +59,7 @@ minecraftServer:
       - "plan:teRNK6V9"
   spigetResources:
     - 17311 # WorldEditSelectionVisualizer
+    - 97673 # Personal Weather | Personal Time
 
   rcon:
     enabled: ture
