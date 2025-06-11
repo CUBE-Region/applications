@@ -13,6 +13,10 @@ member:
     - gopaint.use
     - minecraft.command.teleport
     - minecraft.command.gamemode
+    - minecraft.command.give
+    - minecraft.command.kill
+    - minecraft.debugstick
+    - minecraft.command.selector
     - wesv.reload:
         value: false
     - worldedit.navigation.jumpto.tool
