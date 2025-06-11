@@ -11,8 +11,7 @@ member:
     - gobrush.export
     - gobrush.use
     - gopaint.use
-    - ptime.ptime
-    - ptime.pweather
+    - ptw.*
     - minecraft.command.teleport
     - minecraft.command.gamemode
     - minecraft.command.give

@@ -46,6 +46,7 @@ minecraftServer:
   pluginUrls:
     - https://ci.athion.net/job/goBrush-1.13+/87/artifact/build/libs/goBrush-3.8.0-87.jar
     - https://drive.google.com/uc?export=download&id=1ir95cHF9wE3TxsAwu7oexnIwW7U9GPO1 # Distant Horizons
+    - https://dev.bukkit.org/projects/player-time-weather/files/2963299/download # Personal Time | Personal Weather
   modrinth:
     projects:
       - "datapack:terralith"
@@ -59,7 +60,6 @@ minecraftServer:
       - "plan:teRNK6V9"
   spigetResources:
     - 17311 # WorldEditSelectionVisualizer
-    - 97673 # Personal Weather | Personal Time
 
   rcon:
     enabled: ture
