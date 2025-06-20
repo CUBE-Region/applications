@@ -100,6 +100,34 @@
             "key": "KeyStore_path",
             "value": "proxy"
           }
+        },
+        {
+          "$put": {
+            "path": "$.Formatting.Dates",
+            "key": "Show_recent_day_names_date_pattern",
+            "value": "YYYY/MM/dd"
+          }
+        },
+        {
+          "$put": {
+            "path": "$.Formatting.Dates",
+            "key": "Full",
+            "value": "YYYY/MM/dd HH:mm:ss"
+          }
+        },
+        {
+          "$put": {
+            "path": "$.Formatting.Dates",
+            "key": "NoSeconds",
+            "value": "YYYY/MM/dd HH:mm"
+          }
+        },
+        {
+          "$put": {
+            "path": "$.Formatting.Dates",
+            "key": "TimeZone",
+            "value": "GMT+9"
+          }
         }
       ]
     }
