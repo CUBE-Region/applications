@@ -8,3 +8,4 @@ spec:
   resources:
     requests:
       storage: 25Gi
+  storageClassName: mayastor-3-replica
