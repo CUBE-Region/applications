@@ -2,10 +2,10 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: minecraft-cube-vanilla-pvc
+  namespace: minecraft-cube
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 25Gi
-  storageClassName: mayastor-3-replica
