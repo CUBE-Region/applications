@@ -13,6 +13,9 @@ member:
     - gopaint.use
     - ptw.*
     - axiom.*
+    - voxelsniper.sniper
+    - voxelsniper.goto
+    - voxelsniper.brush.*
     - minecraft.command.teleport
     - minecraft.command.gamemode
     - minecraft.command.give

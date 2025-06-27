@@ -59,6 +59,7 @@ minecraftServer:
       - "worldguard"
       - "plan:teRNK6V9"
       - "axiom-paper-plugin"
+      - "fastasyncvoxelsniper"
   spigetResources:
     - 17311 # WorldEditSelectionVisualizer
     - 46461 # F3NPerm
