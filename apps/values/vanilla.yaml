@@ -51,7 +51,7 @@ minecraftServer:
     projects:
       - "datapack:terralith"
       - "datapack:terratonic"
-      - "datapack:william-wythers-overhauled-overworld-(datapack)"
+      - "datapack:william-wythers-overhauled-overworld-(datapack):bD2gwEkk"
       - "fastasyncworldedit:cf5QSDJ7"
       - "gopaintadvanced"
       - "simple_warps"
