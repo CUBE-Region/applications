@@ -49,9 +49,9 @@ minecraftServer:
     - https://dev.bukkit.org/projects/player-time-weather/files/2963299/download # Personal Time | Personal Weather
   modrinth:
     projects:
-      - "datapack:terralith"
-      - "datapack:terratonic"
-      - "datapack:william-wythers-overhauled-overworld-(datapack):bD2gwEkk"
+      - "datapack:terralith:urbokcOc"
+      - "datapack:terratonic:BE3gZYQ5"
+      - "datapack:william-wythers-overhauled-overworld-(datapack):COK4VZjy"
       - "fastasyncworldedit:cf5QSDJ7"
       - "gopaintadvanced"
       - "simple_warps"
