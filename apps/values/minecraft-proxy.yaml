@@ -8,14 +8,14 @@ resources:
 
 affinity:
   nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        preference:
+          matchExpressions:
+            - key: chik4ge.me/node-tier
+              operator: NotIn
               values:
-                - k8s-w-blossom
-                - k8s-w-edelweiss
+                - small
 
 minecraftProxy:
   type: VELOCITY

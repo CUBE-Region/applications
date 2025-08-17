@@ -52,6 +52,16 @@ spec:
             resources:
               requests:
                 cpu: 100m
+            affinity:
+              nodeAffinity:
+                preferredDuringSchedulingIgnoredDuringExecution:
+                  - weight: 100
+                    preference:
+                      matchExpressions:
+                        - key: chik4ge.me/node-tier
+                          operator: NotIn
+                          values:
+                            - small
           logcollector:
             resources:
               requests:
