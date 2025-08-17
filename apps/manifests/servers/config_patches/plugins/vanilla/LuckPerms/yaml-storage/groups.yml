@@ -26,3 +26,4 @@ member:
         value: false
     - worldedit.navigation.jumpto.tool
     - worldedit.navigation.thru.tool
+    - worldedit.schematic.load.web
