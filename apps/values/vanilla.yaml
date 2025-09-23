@@ -46,7 +46,7 @@ minecraftServer:
   pluginUrls:
     - https://ci.athion.net/job/goBrush-1.13+/87/artifact/build/libs/goBrush-3.8.0-87.jar
     - https://drive.google.com/uc?export=download&id=1ir95cHF9wE3TxsAwu7oexnIwW7U9GPO1 # Distant Horizons
-    - https://dev.bukkit.org/projects/player-time-weather/files/2963299/download # Personal Time | Personal Weather
+    - https://github.com/JadedDragoon/Player-Time-Weather/releases/download/0.5.1/PlayerTimeWeather-v0.5.1-Spigot1.13.2.jar # Personal Time | Personal Weather
   modrinth:
     projects:
       - "datapack:terralith:urbokcOc"
