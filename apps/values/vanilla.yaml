@@ -5,7 +5,7 @@ sidecarContainers: []
 
 resources:
   requests:
-    memory: 8Gi
+    memory: 6Gi
   limits:
     memory: 8Gi
     cpu: 6000m
@@ -99,6 +99,10 @@ mcbackup:
   backupInterval: 3h
   excludes: "*.jar,cache,logs"
   backupMethod: restic
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
   pruneResticRetention: "--keep-tag manual --keep-within-daily 7d --keep-within-weekly 1m --keep-within-monthly 1y --keep-within-yearly 99y"
   resticEnvs:
     RESTIC_REPOSITORY:

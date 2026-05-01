@@ -1,9 +1,9 @@
 resources:
   requests:
-    memory: 3Gi
+    memory: 512Mi
     cpu: 100m
   limits:
-    memory: 3Gi
+    memory: 1Gi
     cpu: 500m
 
 affinity:
